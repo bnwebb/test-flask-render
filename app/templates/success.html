@@ -1,0 +1,11 @@
+{% extends "base.html" %} 
+
+{% block content %}
+    <div class="container mt-4">
+        <h4>Your email has been sent.</h4>
+        <p>Thank you for making your voice heard and protecting our neighborhood.</p>
+        <a href="{{ url_for('home') }}">
+            <button class="btn btn-secondary">Home</button>
+        </a>
+    </div>
+{% endblock %}

@@ -1,7 +1,25 @@
 {% extends "base.html" %} 
 
 {% block content %}
-    <div class="container">
-        <h1>Welcome</h1>
+    <div class="container mt-4">
+        <h4>Welcome</h4>
+        <p>Please enter your name to submit a letter to your politicians</p>
+        <form action="" method="POST" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.name.label }}<br>
+                {{ form.name(size=32) }}<br>
+                {% for error in form.name.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+            <!-- <div class="mb-3">
+                <label for="nameInput" class="form-label">Full name</label>
+                <input type="input" class="form-control" id="nameInput" placeholder="Jefferson Smith" style="width: 70%;">
+                <div id="nameHelp" class="form-text">Enter your name as you'd like to see it in your email.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button> -->
+        </form>
     </div>
 {% endblock %}
